@@ -1,0 +1,26 @@
+'''
+Compare costs of different nets
+'''
+import cPickle
+import matplotlib.pylab as plt
+import numpy as np
+import network_interson
+f = open('net_SinEvid2_0.001_0.001_100_0.5.pkl','rb')
+cost = cPickle.load(f).cost_train
+f.close()
+
+f = open('net_SinEvid7_0.001_0.001_100_0.5.pkl','rb')
+cost7 = cPickle.load(f).cost_train
+f.close()
+
+f = open('net_SinEvid8_0.001_0.001_100_0.5.pkl','rb')
+cost8 = cPickle.load(f).cost_train
+f.close()
+
+plt.plot(cost, 'ro', label='loss net 2')
+plt.plot(cost7, 'bo',label='loss net 7')
+plt.plot(cost8, 'ko',label='los net 8')
+plt.legend(loc='upper right')
+plt.xlabel('Iteration')
+plt.ylabel('Loss')
+plt.show()

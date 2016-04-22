@@ -1,0 +1,7 @@
+
+TP = 14
+TN = 244
+FP = 4
+FN = 3
+
+print '	     True condition','\n\n', 'Predicted   ', 'TP: %d'%(TP), '  FP: %d'%(FP), '\n', 'condition   ','FN: %d'%(FN), '  TN: %d'%(TN)
